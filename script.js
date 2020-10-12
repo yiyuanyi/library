@@ -1,4 +1,6 @@
-let myLibrary = [
+const library = document.querySelector('#library');
+
+let myBooks = [
     {
         title: 'A Little Life',
         author: 'Hanya Yanagihara',
@@ -28,5 +30,6 @@ function Book(title, author, year, status) {
 }
 
 function addBookToLibrary() {
-
+    let newBook = new Book(title, author, year, status);
+    myLibrary.push(newBook);
 }
