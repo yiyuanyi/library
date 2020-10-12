@@ -33,3 +33,9 @@ function addBookToLibrary() {
     let newBook = new Book(title, author, year, status);
     myLibrary.push(newBook);
 }
+
+function renderLibrary(myBooks) {
+    for (i = 0; i < myBooks.length; i++) {
+        
+    }
+}
