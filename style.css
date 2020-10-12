@@ -1,3 +1,17 @@
 body {
     background-color: rgb(32, 32, 32);
 }
+
+#title {
+    text-align: center;
+    color: #FFF;
+    font-family: helvetica, 'sans serif';
+}
+
+#new-book {
+    width: 100px;
+    height: 40px;
+    background-color: #a2c7ff;
+    border: solid 3px #0457d3;
+    border-radius: 5px;
+}
