@@ -20,7 +20,7 @@ let myLibrary = [
 
 ];
 
-function Book() {
+function Book(title, author, year, status) {
     this.title = title,
     this.author = author,
     this.year = year,
