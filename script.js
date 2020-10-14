@@ -1,4 +1,5 @@
 const library = document.querySelector('#library');
+const addBook = document.querySelector('#add-book');
 
 let myBooks = [
     {
@@ -36,6 +37,11 @@ function addBookToLibrary() {
 
 function renderLibrary(myBooks) {
     for (i = 0; i < myBooks.length; i++) {
-        
+        renderCard();
     }
+}
+
+function renderCard() {
+    //make card
+    //add card to #library DOM
 }
