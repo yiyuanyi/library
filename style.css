@@ -4,12 +4,12 @@
 
 body {
     background-color: #202020;
+    font-family: helvetica, 'sans serif';
 }
 
 #title {
     text-align: center;
     color: #FFF;
-    font-family: helvetica, 'sans serif';
 }
 
 #add-book {
@@ -22,6 +22,15 @@ body {
     border-radius: 5px;
 }
 
-#test-card {
+#library {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-around;
+}
 
+#card {
+    width: 200px;
+    height: 230px;
+    background-color: #ffc760;
+    box-shadow: 10px 15px #357796;
 }
