@@ -1,5 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: rgb(32, 32, 32);
+    background-color: #202020;
 }
 
 #title {
@@ -8,10 +12,16 @@ body {
     font-family: helvetica, 'sans serif';
 }
 
-#new-book {
+#add-book {
+    position: fixed;
+    right: 100px;
     width: 100px;
     height: 40px;
     background-color: #a2c7ff;
     border: solid 3px #0457d3;
     border-radius: 5px;
+}
+
+#test-card {
+
 }
