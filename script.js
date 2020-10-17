@@ -1,5 +1,5 @@
 const library = document.querySelector('#library');
-const addBook = document.querySelector('#add-book');
+const newBook = document.querySelector('#new-book');
 
 let myBooks = [
     {
@@ -24,24 +24,35 @@ let myBooks = [
 ];
 
 function Book(title, author, year, status) {
-    this.title = title,
-    this.author = author,
-    this.year = year,
-    this.status = status
+    document.getElementById('title').value = title,
+    document.getElementById('author').value = author,
+    document.getElementById('year').value = year,
+    document.getElementById('status').value = status
 }
 
 function addBookToLibrary() {
     let newBook = new Book(title, author, year, status);
     myLibrary.push(newBook);
+    console.log('added book');
 }
 
 function renderLibrary(myBooks) {
     for (i = 0; i < myBooks.length; i++) {
-        renderCard();
+        renderCard(myBooks[i]);
     }
 }
 
 function renderCard() {
     //make card
     //add card to #library DOM
+    let card = document.createElement('div');
+    card.classList.add('card');
+    let para = document.createElement('p');
 }
+
+function openForm() {
+    document.getElementById('book-details').style.display="block";
+}
+
+newBook.addEventListener('click', openForm);
+
