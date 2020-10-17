@@ -14,12 +14,20 @@ body {
 
 #add-book {
     position: fixed;
-    right: 100px;
+    right: 120px;
     width: 100px;
     height: 40px;
     background-color: #a2c7ff;
     border: solid 3px #0457d3;
     border-radius: 5px;
+}
+
+#book-details {
+    position: fixed;
+    right: 50px;
+    width: 200px;
+    height: 200px;
+    background-color: #FFF;
 }
 
 #library {
