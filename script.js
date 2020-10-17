@@ -1,6 +1,7 @@
 const library = document.querySelector('#library');
 const newBook = document.querySelector('#new-book');
 const addBook = document.querySelector('#add-book');
+const status = document.querySelector('#status');
 const closeBtn = document.querySelector('#close');
 
 let myBooks = [
@@ -25,13 +26,15 @@ let myBooks = [
 
 ];
 
-
+function checkStatus() {
+    return status.checked == true ? 'read' : 'not read';
+}
 
 function Book() {
     this.title = title.value,
     this.author = author.value,
     this.year = year.value,
-    this.status = status.value
+    this.status = checkStatus()
 }
 
 function addBookToLibrary() {
@@ -56,13 +59,9 @@ function renderCard(title, author, year, status) {
     
 }
 
-function openForm() {
-    document.getElementById('book-details').classList.remove('hidden');
-}
+function openForm() { document.getElementById('book-details').classList.remove('hidden');}
 
-function closeForm() {
-    document.getElementById('book-details').classList.add('hidden');
-}
+function closeForm() { document.getElementById('book-details').classList.add('hidden');}
 
 newBook.addEventListener('click', openForm);
 addBook.addEventListener('click', addBookToLibrary);
