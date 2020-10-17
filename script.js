@@ -28,14 +28,10 @@ let myBooks = [
 
 
 function Book() {
-    let title = document.getElementById('title').value;
-    let author = document.getElementById('author').value;
-    let year = document.getElementById('year').value;
-    let status = document.getElementById('status').value;
-    this.title = title,
-    this.author = author,
-    this.year = year,
-    this.status = status
+    this.title = title.value,
+    this.author = author.value,
+    this.year = year.value,
+    this.status = status.value
 }
 
 function addBookToLibrary() {
