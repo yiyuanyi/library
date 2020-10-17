@@ -1,6 +1,7 @@
 const library = document.querySelector('#library');
 const newBook = document.querySelector('#new-book');
 const addBook = document.querySelector('#add-book');
+const closeBtn = document.querySelector('#close');
 
 let myBooks = [
     {
@@ -54,8 +55,14 @@ function renderCard(title, author, year, status) {
 }
 
 function openForm() {
-    document.getElementById('book-details').style.display="block";
+    document.getElementById('book-details').classList.remove('hidden');
+}
+
+function closeForm() {
+    document.getElementById('book-details').classList.add('hidden');
 }
 
 newBook.addEventListener('click', openForm);
+addBook.addEventListener('click', addBookToLibrary);
+closeBtn.addEventListener('click', closeForm);
 
