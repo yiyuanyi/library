@@ -1,5 +1,6 @@
 const library = document.querySelector('#library');
 const newBook = document.querySelector('#new-book');
+const addBook = document.querySelector('#add-book');
 
 let myBooks = [
     {
@@ -42,12 +43,14 @@ function renderLibrary(myBooks) {
     }
 }
 
-function renderCard() {
+function renderCard(title, author, year, status) {
     //make card
     //add card to #library DOM
     let card = document.createElement('div');
     card.classList.add('card');
+    let header = document.createElement('h2');
     let para = document.createElement('p');
+    
 }
 
 function openForm() {
