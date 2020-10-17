@@ -25,15 +25,21 @@ let myBooks = [
 
 ];
 
-function Book(title, author, year, status) {
-    document.getElementById('title').value = title,
-    document.getElementById('author').value = author,
-    document.getElementById('year').value = year,
-    document.getElementById('status').value = status
+
+
+function Book() {
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let year = document.getElementById('year').value;
+    let status = document.getElementById('status').value;
+    this.title = title,
+    this.author = author,
+    this.year = year,
+    this.status = status
 }
 
 function addBookToLibrary() {
-    let newBook = new Book(title, author, year, status);
+    let newBook = new Book();
     myBooks.push(newBook);
     console.log('added book');
 }
