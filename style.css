@@ -30,6 +30,10 @@ body {
     background-color: #FFF;
 }
 
+.hidden {
+    display: none;
+}
+
 #library {
     display: flex;
     margin-top: 40px;
