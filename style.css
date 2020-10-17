@@ -12,7 +12,7 @@ body {
     color: #FFF;
 }
 
-#add-book {
+#new-book {
     position: fixed;
     right: 120px;
     width: 100px;
