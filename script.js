@@ -40,17 +40,41 @@ function Book() {
 function addBookToLibrary() {
     let newBook = new Book();
     myBooks.push(newBook);
-    renderLibrary(myBooks);
+    renderLibrary();
 }
 
 function renderLibrary() {
-    myBooks.forEach(renderCard);
+    for (i = 0; i < myBooks.length; i++) {
+        renderCard(i);
+    }
 }
 
-function renderCard() {
+function renderCard(i) {
     let card = document.createElement('div');
     card.classList.add('card');
     library.appendChild(card);
+
+    let header = document.createElement('h2');
+    header.innerHTML = myBooks[i].title;
+    card.appendChild(header);
+
+    let author = document.createElement('p');
+    author.innerHTML = myBooks[i].author;
+    card.appendChild(author);
+
+    let year = document.createElement('p');
+    year.innerHTML = myBooks[i].year;
+    card.appendChild(year);
+    
+    let read = document.createElement('button');
+    read.classList.add('status-btn');
+    if (myBooks[i].status == 'read') {
+        read.classList.add('read');
+    } else {
+        read.classList.add('not-read');
+    }
+    read.innerHTML = myBooks[i].status;
+    card.appendChild(read);
 }
 
 function openForm() { document.getElementById('book-details').classList.remove('hidden');}
