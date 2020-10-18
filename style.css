@@ -38,10 +38,11 @@ body {
     display: flex;
     margin-top: 60px;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .card {
-    width: 200px;
+    min-width: 200px;
     height: 230px;
     margin: 30px;
     background-color: #ffc760;
