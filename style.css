@@ -14,7 +14,7 @@ body {
 
 #new-book {
     position: fixed;
-    right: 120px;
+    left: 30px;
     width: 100px;
     height: 40px;
     background-color: #a2c7ff;
@@ -24,7 +24,7 @@ body {
 
 #book-details {
     position: fixed;
-    right: 50px;
+    left: 30px;
     width: 200px;
     height: 200px;
     background-color: #FFF;
