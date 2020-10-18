@@ -24,6 +24,7 @@ body {
 
 #book-details {
     position: fixed;
+    z-index: 1;
     left: 30px;
     width: 200px;
     height: 200px;
@@ -68,6 +69,7 @@ p {
 
 .status-btn {
     position: relative;
+    z-index: 0;
     left: 70px;
     width: 60px;
     height: 30px;
