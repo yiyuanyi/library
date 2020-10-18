@@ -42,7 +42,9 @@ body {
 }
 
 .card {
+    position: relative;
     min-width: 200px;
+    max-width: 200px;
     height: 230px;
     margin: 30px;
     background-color: #ffc760;
@@ -67,9 +69,10 @@ p {
 }
 
 .status-btn {
-    position: relative;
+    position: absolute;
     z-index: 0;
     left: 70px;
+    bottom: 30px;
     width: 60px;
     height: 30px;
     border: none;
