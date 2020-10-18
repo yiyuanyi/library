@@ -40,30 +40,26 @@ function Book() {
 function addBookToLibrary() {
     let newBook = new Book();
     myBooks.push(newBook);
-    console.log('added book');
+    renderLibrary(myBooks);
 }
 
-function renderLibrary(myBooks) {
-    for (i = 0; i < myBooks.length; i++) {
-        renderCard(myBooks[i]);
-    }
+function renderLibrary() {
+    myBooks.forEach(renderCard);
 }
 
-function renderCard(title, author, year, status) {
-    //make card
-    //add card to #library DOM
+function renderCard() {
     let card = document.createElement('div');
     card.classList.add('card');
-    let header = document.createElement('h2');
-    let para = document.createElement('p');
-    
+    library.appendChild(card);
 }
 
 function openForm() { document.getElementById('book-details').classList.remove('hidden');}
 
 function closeForm() { document.getElementById('book-details').classList.add('hidden');}
 
+window.addEventListener('load', renderLibrary);
 newBook.addEventListener('click', openForm);
 addBook.addEventListener('click', addBookToLibrary);
 closeBtn.addEventListener('click', closeForm);
+
 
