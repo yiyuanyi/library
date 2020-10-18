@@ -40,7 +40,8 @@ function Book() {
 function addBookToLibrary() {
     let newBook = new Book();
     myBooks.push(newBook);
-    renderLibrary();
+    let i = myBooks.length-1;
+    renderCard(i);
 }
 
 function renderLibrary() {
@@ -65,7 +66,7 @@ function renderCard(i) {
     let year = document.createElement('p');
     year.innerHTML = myBooks[i].year;
     card.appendChild(year);
-    
+
     let read = document.createElement('button');
     read.classList.add('status-btn');
     if (myBooks[i].status == 'read') {
