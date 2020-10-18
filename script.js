@@ -3,6 +3,7 @@ const newBook = document.querySelector('#new-book');
 const addBook = document.querySelector('#add-book');
 const status = document.querySelector('#status');
 const closeBtn = document.querySelector('#close');
+const formDetails = document.querySelector('#book-details');
 
 let myBooks = [
     {
@@ -42,6 +43,7 @@ function addBookToLibrary() {
     myBooks.push(newBook);
     let i = myBooks.length-1;
     renderCard(i);
+    formDetails.reset();
 }
 
 function renderLibrary() {
