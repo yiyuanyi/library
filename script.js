@@ -55,6 +55,7 @@ function renderLibrary() {
 function renderCard(i) {
     let card = document.createElement('div');
     card.classList.add('card');
+    card.setAttribute('data-key', i);
     library.appendChild(card);
 
     let header = document.createElement('h2');
