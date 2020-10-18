@@ -37,12 +37,13 @@ body {
 #library {
     display: flex;
     margin-top: 40px;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .card {
     width: 200px;
     height: 230px;
+    margin: 30px;
     background-color: #ffc760;
     box-shadow: 10px 15px #357796;
 }
