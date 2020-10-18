@@ -38,6 +38,13 @@ function Book() {
     this.status = checkStatus()
 }
 
+Book.prototype.changeStatus = function() {
+    statusBtn.addEventListener
+    if (this.status == 'read') {
+
+    }
+}
+
 function addBookToLibrary() {
     let newBook = new Book();
     myBooks.push(newBook);
@@ -57,6 +64,12 @@ function renderCard(i) {
     card.classList.add('card');
     card.setAttribute('data-key', i);
     library.appendChild(card);
+
+    let remove = document.createElement('button');
+    remove.innerHTML = 'X';
+    remove.classList.add('remove');
+    remove.setAttribute('type','button');
+    card.appendChild(remove);
 
     let header = document.createElement('h2');
     header.innerHTML = myBooks[i].title;
