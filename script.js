@@ -39,10 +39,9 @@ function Book() {
 }
 
 Book.prototype.changeStatus = function() {
-    statusBtn.addEventListener
-    if (this.status == 'read') {
-
-    }
+    //statusBtn on click
+    //if 'read' change class to 'not-read'
+    //opposite
 }
 
 function addBookToLibrary() {
@@ -99,9 +98,14 @@ function openForm() { document.getElementById('book-details').classList.remove('
 
 function closeForm() { document.getElementById('book-details').classList.add('hidden');}
 
+function removeCard() {
+    //remove card based on data-key index
+}
+
 window.addEventListener('load', renderLibrary);
 newBook.addEventListener('click', openForm);
 addBook.addEventListener('click', addBookToLibrary);
 closeBtn.addEventListener('click', closeForm);
+
 
 
