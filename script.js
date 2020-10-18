@@ -71,6 +71,7 @@ function renderCard(i) {
 
     let read = document.createElement('button');
     read.classList.add('status-btn');
+    read.setAttribute('type','button');
     if (myBooks[i].status == 'read') {
         read.classList.add('read');
     } else {
