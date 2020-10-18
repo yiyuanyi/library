@@ -53,10 +53,23 @@ h2 {
     font-size: 1rem;
 }
 
+p {
+    text-align: center;
+}
+
 .read {
     background-color: #137931;
 }
 
 .not-read {
     background-color: #b30808;
+}
+
+.status-btn {
+    position: relative;
+    left: 70px;
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 2px;
 }
