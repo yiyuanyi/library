@@ -4,6 +4,7 @@ const addBook = document.querySelector('#add-book');
 const status = document.querySelector('#status');
 const closeBtn = document.querySelector('#close');
 const formDetails = document.querySelector('#book-details');
+const statusBtn = document.querySelectorAll('.status-btn');
 
 let myBooks = [
     {
@@ -39,9 +40,11 @@ function Book() {
 }
 
 Book.prototype.changeStatus = function() {
-    //statusBtn on click
-    //if 'read' change class to 'not-read'
-    //opposite
+    if (this.status == 'read') {
+        this.status = 'not read';
+    } else {
+        this.status = 'read';
+    }
 }
 
 function addBookToLibrary() {
