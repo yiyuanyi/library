@@ -60,12 +60,22 @@ p {
     text-align: center;
 }
 
+.remove {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    background-color: #eb6d6d;
+    border: solid 1px #b82b2b;
+}
+
 .read {
     background-color: #137931;
+    border: solid 2px #0a3f1a;
 }
 
 .not-read {
     background-color: #b30808;
+    border: solid 2px #580505;
 }
 
 .status-btn {
@@ -74,7 +84,6 @@ p {
     left: 70px;
     bottom: 30px;
     width: 60px;
-    height: 30px;
-    border: none;
-    border-radius: 2px;
+    height: 35px;
+    border-radius: 4px;
 }
