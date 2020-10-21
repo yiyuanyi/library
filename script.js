@@ -4,7 +4,8 @@ const addBook = document.querySelector('#add-book');
 const status = document.querySelector('#status');
 const closeBtn = document.querySelector('#close');
 const formDetails = document.querySelector('#book-details');
-const statusBtn = document.querySelectorAll('.status-btn');
+const statusBtn = document.getElementsByClassName('status-btn');
+const removeBtn = document.getElementsByClassName('remove');
 
 let myBooks = [
     {
@@ -102,13 +103,14 @@ function openForm() { document.getElementById('book-details').classList.remove('
 function closeForm() { document.getElementById('book-details').classList.add('hidden');}
 
 function removeCard() {
-    //remove card based on data-key index
+    let index = card[data-key];
+    console.log(index);
 }
 
 window.addEventListener('load', renderLibrary);
 newBook.addEventListener('click', openForm);
 addBook.addEventListener('click', addBookToLibrary);
 closeBtn.addEventListener('click', closeForm);
-
+removeBtn.addEventListener('click', removeCard);
 
 
