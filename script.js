@@ -5,7 +5,7 @@ const status = document.querySelector('#status');
 const closeBtn = document.querySelector('#close');
 const formDetails = document.querySelector('#book-details');
 const statusBtn = document.getElementsByClassName('status-btn');
-const removeBtn = document.getElementsByClassName('remove');
+const removeBtn = document.getElementsByClassName('remove-btn');
 
 let myBooks = [
     {
@@ -70,7 +70,7 @@ function renderCard(i) {
 
     let remove = document.createElement('button');
     remove.innerHTML = 'X';
-    remove.classList.add('remove');
+    remove.classList.add('remove-btn');
     remove.setAttribute('type','button');
     card.appendChild(remove);
 
@@ -103,8 +103,9 @@ function openForm() { document.getElementById('book-details').classList.remove('
 function closeForm() { document.getElementById('book-details').classList.add('hidden');}
 
 function removeCard() {
-    let index = card[data-key];
-    console.log(index);
+    let index = myBooks.indexOf(this);
+    delete myBooks[index];
+    renderLibrary();
 }
 
 window.addEventListener('load', renderLibrary);
