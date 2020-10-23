@@ -75,6 +75,11 @@ function renderCard(i) {
     remove.setAttribute('type','button');
     card.appendChild(remove);
 
+    const removeBtn = document.getElementsByClassName('remove-btn');
+    for (let i = 0; i < removeBtn.length; i++) {
+        removeBtn[i].addEventListener('click', removeCard)
+    }
+
     let header = document.createElement('h2');
     header.innerHTML = myBooks[i].title;
     card.appendChild(header);
@@ -108,17 +113,6 @@ function removeCard(i) {
     myBooks.splice(i, 1);
     renderLibrary();
 }
-
-document.addEventListener('click', function(e) {
-    if (e.target && e.target.classList == 'remove-btn') {
-        const removeBtn = document.getElementsByClassName('remove-btn');
-        for (let i = 0; i < removeBtn.length; i++) {
-            removeBtn[i].addEventListener('click', function() {
-                console.log(i);
-            });
-        }
-    }
-});
 
 window.addEventListener('load', renderLibrary);
 newBook.addEventListener('click', openForm);
