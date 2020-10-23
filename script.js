@@ -4,8 +4,6 @@ const addBook = document.querySelector('#add-book');
 const status = document.querySelector('#status');
 const closeBtn = document.querySelector('#close');
 const formDetails = document.querySelector('#book-details');
-const statusBtn = document.getElementsByClassName('status-btn');
-const removeBtn = document.getElementsByClassName('remove-btn');
 
 let myBooks = [
     {
@@ -41,6 +39,7 @@ function Book() {
 }
 
 Book.prototype.changeStatus = function() {
+    const statusBtn = document.getElementsByClassName('status-btn');
     if (this.status == 'read') {
         this.status = 'not read';
     } else {
@@ -98,32 +97,30 @@ function renderCard(i) {
     }
     read.innerHTML = myBooks[i].status;
     card.appendChild(read);
+
 }
 
 function openForm() { document.getElementById('book-details').classList.remove('hidden');}
 
 function closeForm() { document.getElementById('book-details').classList.add('hidden');}
 
-function removeCard(e) {
-    let book = e.target.parentElement;
-    let index = book['data-key'];
-    myBooks.splice(index, 1);
+function removeCard(i) {
+    myBooks.splice(i, 1);
     renderLibrary();
 }
 
-for (let i = 0; i < removeBtn.length; i++) {
-    removeBtn[i].addEventListener('click', function() {
-        console.log(i);
-    });
-}
+document.addEventListener('click', function(e) {
+    if (e.target && e.target.classList == 'remove-btn') {
+        const removeBtn = document.getElementsByClassName('remove-btn');
+        for (let i = 0; i < removeBtn.length; i++) {
+            removeBtn[i].addEventListener('click', function() {
+                console.log(i);
+            });
+        }
+    }
+});
 
 window.addEventListener('load', renderLibrary);
 newBook.addEventListener('click', openForm);
 addBook.addEventListener('click', addBookToLibrary);
 closeBtn.addEventListener('click', closeForm);
-
-
-
-
-
-
