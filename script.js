@@ -66,7 +66,6 @@ function renderLibrary() {
 function renderCard(i) {
     let card = document.createElement('div');
     card.classList.add('card');
-    card.setAttribute('data-key', i);
     library.appendChild(card);
 
     let remove = document.createElement('button');
@@ -76,8 +75,8 @@ function renderCard(i) {
     card.appendChild(remove);
 
     const removeBtn = document.getElementsByClassName('remove-btn');
-    for (let i = 0; i < removeBtn.length; i++) {
-        removeBtn[i].addEventListener('click', removeCard)
+    for (let j = 0; j < removeBtn.length; j++) {
+        removeBtn[j].addEventListener('click', removeCard)
     }
 
     let header = document.createElement('h2');
