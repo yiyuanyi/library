@@ -54,9 +54,11 @@ function addBookToLibrary() {
     let i = myBooks.length-1;
     renderCard(i);
     formDetails.reset();
+    closeForm();
 }
 
 function renderLibrary() {
+    //add bit to clear entire library before rendering again
     for (i = 0; i < myBooks.length; i++) {
         renderCard(i);
     }
@@ -102,16 +104,26 @@ function openForm() { document.getElementById('book-details').classList.remove('
 
 function closeForm() { document.getElementById('book-details').classList.add('hidden');}
 
-function removeCard() {
-    let index = myBooks.indexOf(this);
-    delete myBooks[index];
+function removeCard(e) {
+    let book = e.target.parentElement;
+    let index = book['data-key'];
+    myBooks.splice(index, 1);
     renderLibrary();
+}
+
+for (let i = 0; i < removeBtn.length; i++) {
+    removeBtn[i].addEventListener('click', function() {
+        console.log(i);
+    });
 }
 
 window.addEventListener('load', renderLibrary);
 newBook.addEventListener('click', openForm);
 addBook.addEventListener('click', addBookToLibrary);
 closeBtn.addEventListener('click', closeForm);
-removeBtn.addEventListener('click', removeCard);
+
+
+
+
 
 
