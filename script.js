@@ -57,7 +57,6 @@ function addBookToLibrary() {
 }
 
 function renderLibrary() {
-    //add bit to clear entire library before rendering again
     for (i = 0; i < myBooks.length; i++) {
         renderCard(i);
     }
@@ -76,7 +75,7 @@ function renderCard(i) {
 
     const removeBtn = document.getElementsByClassName('remove-btn');
     for (let j = 0; j < removeBtn.length; j++) {
-        removeBtn[j].addEventListener('click', removeCard)
+        removeBtn[j].addEventListener('click', removeBook);
     }
 
     let header = document.createElement('h2');
@@ -108,10 +107,11 @@ function openForm() { document.getElementById('book-details').classList.remove('
 
 function closeForm() { document.getElementById('book-details').classList.add('hidden');}
 
-function removeCard(i) {
-    myBooks.splice(i, 1);
-    renderLibrary();
+function removeBook(j) {
+    myBooks.splice(j, 1);
 }
+
+
 
 window.addEventListener('load', renderLibrary);
 newBook.addEventListener('click', openForm);
