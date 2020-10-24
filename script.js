@@ -109,7 +109,6 @@ function closeForm() { document.getElementById('book-details').classList.add('hi
 
 function removeBook(e) {
     let index = e.target.parentNode.getAttribute('data-key');
-    console.log(index);
     myBooks.splice(index, 1);
     removeCards();
     renderLibrary();
