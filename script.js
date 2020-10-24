@@ -111,6 +111,14 @@ function removeBook(e) {
     let index = e.target.parentNode.getAttribute('data-key');
     console.log(index);
     myBooks.splice(index, 1);
+    removeCards();
+    renderLibrary();
+}
+
+function removeCards() {
+    while (library.firstChild) {
+        library.removeChild(library.firstChild);
+    }    
 }
 
 window.addEventListener('load', renderLibrary);
