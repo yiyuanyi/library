@@ -38,14 +38,17 @@ function Book() {
     this.status = checkStatus()
 }
 
-Book.prototype.changeStatus = function() {
+/*Book.prototype.changeStatus = function() {
     const statusBtn = document.getElementsByClassName('status-btn');
-    if (this.status == 'read') {
-        this.status = 'not read';
-    } else {
-        this.status = 'read';
+    for (i = 0; i < statusBtn.length; i++){
+        statusBtn[i].addEventListener('click', function(e) {
+            if (e.target.classList.contains('read')) {
+                //remove read class and make it not read
+                //make innerHTML say not read
+            } else if //do opposite of above
+        })
     }
-}
+}*/
 
 function addBookToLibrary() {
     let newBook = new Book();
