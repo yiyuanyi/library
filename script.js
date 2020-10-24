@@ -38,16 +38,8 @@ function Book() {
     this.status = checkStatus()
 }
 
-/*Book.prototype.changeStatus = function() {
-    const statusBtn = document.getElementsByClassName('status-btn');
-    for (i = 0; i < statusBtn.length; i++){
-        statusBtn[i].addEventListener('click', function(e) {
-            if (e.target.classList.contains('read')) {
-                //remove read class and make it not read
-                //make innerHTML say not read
-            } else if //do opposite of above
-        })
-    }
+/*Book.prototype.changeStatus = function(i) {
+    myBooks[i].status == 'read' ? myBooks[i].status = 'not read' : myBooks[i].status = 'read';
 }*/
 
 function addBookToLibrary() {
@@ -62,6 +54,10 @@ function addBookToLibrary() {
 function renderLibrary() {
     for (i = 0; i < myBooks.length; i++) {
         renderCard(i);
+    }
+    const statusBtn = document.getElementsByClassName('status-btn');
+    for (let i = 0; i < statusBtn.length; i++) {
+        statusBtn[i].addEventListener('click', changeStatus);
     }
     const removeBtn = document.getElementsByClassName('remove-btn');
     for (let j = 0; j < removeBtn.length; j++) {
@@ -121,6 +117,13 @@ function removeCards() {
     while (library.firstChild) {
         library.removeChild(library.firstChild);
     }    
+}
+
+function changeStatus(e) {
+    let index = e.target.parentNode.getAttribute('data-key');
+    myBooks[index].status == 'read' ? myBooks[index].status = 'not read' : myBooks[index].status = 'read';
+    removeCards();
+    renderLibrary();
 }
 
 window.addEventListener('load', renderLibrary);
