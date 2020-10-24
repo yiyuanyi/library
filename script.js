@@ -60,11 +60,16 @@ function renderLibrary() {
     for (i = 0; i < myBooks.length; i++) {
         renderCard(i);
     }
+    const removeBtn = document.getElementsByClassName('remove-btn');
+    for (let j = 0; j < removeBtn.length; j++) {
+        removeBtn[j].addEventListener('click', removeBook);
+    }
 }
 
 function renderCard(i) {
     let card = document.createElement('div');
     card.classList.add('card');
+    card.setAttribute('data-key', i);
     library.appendChild(card);
 
     let remove = document.createElement('button');
@@ -72,11 +77,6 @@ function renderCard(i) {
     remove.classList.add('remove-btn');
     remove.setAttribute('type','button');
     card.appendChild(remove);
-
-    const removeBtn = document.getElementsByClassName('remove-btn');
-    for (let j = 0; j < removeBtn.length; j++) {
-        removeBtn[j].addEventListener('click', removeBook);
-    }
 
     let header = document.createElement('h2');
     header.innerHTML = myBooks[i].title;
@@ -107,11 +107,11 @@ function openForm() { document.getElementById('book-details').classList.remove('
 
 function closeForm() { document.getElementById('book-details').classList.add('hidden');}
 
-function removeBook(j) {
-    myBooks.splice(j, 1);
+function removeBook(e) {
+    let index = e.target.parentNode.getAttribute('data-key');
+    console.log(index);
+    myBooks.splice(index, 1);
 }
-
-
 
 window.addEventListener('load', renderLibrary);
 newBook.addEventListener('click', openForm);
