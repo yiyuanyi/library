@@ -27,23 +27,17 @@ let myBooks = [
 
 ];
 
-function checkStatus() {
-    return status.checked == true ? 'read' : 'not read';
-}
-
 function Book() {
     this.title = title.value,
     this.author = author.value,
     this.year = year.value,
-    this.status = checkStatus()
+    this.status = status.checked == true ? 'read' : 'not read';
 }
 
-/*Book.prototype.changeStatus = function(e) {
-    let index = e.target.parentNode.getAttribute('data-key');
-    myBooks[index].status == 'read' ? myBooks[index].status = 'not read' : myBooks[index].status = 'read';
-    removeCards();
-    renderLibrary();
-}*/
+Book.prototype.changeStatus = function() {
+    this.status == 'read' ? this.status = 'not read': this.status = 'read';
+    refreshLibrary();
+}
 
 function addBookToLibrary() {
     let newBook = new Book();
@@ -58,10 +52,15 @@ function renderLibrary() {
     for (i = 0; i < myBooks.length; i++) {
         renderCard(i);
     }
+
     const statusBtn = document.getElementsByClassName('status-btn');
     for (let i = 0; i < statusBtn.length; i++) {
-        statusBtn[i].addEventListener('click', changeStatus);
+        statusBtn[i].addEventListener('click', (e) => {        
+            let index = e.target.parentNode.getAttribute('data-key');
+            myBooks[index].changeStatus();
+        });
     }
+    
     const removeBtn = document.getElementsByClassName('remove-btn');
     for (let j = 0; j < removeBtn.length; j++) {
         removeBtn[j].addEventListener('click', removeBook);
@@ -112,8 +111,7 @@ function closeForm() { document.getElementById('book-details').classList.add('hi
 function removeBook(e) {
     let index = e.target.parentNode.getAttribute('data-key');
     myBooks.splice(index, 1);
-    removeCards();
-    renderLibrary();
+    refreshLibrary();
 }
 
 function removeCards() {
@@ -122,12 +120,17 @@ function removeCards() {
     }    
 }
 
-function changeStatus(e) {
+function refreshLibrary() {
+    removeCards();
+    renderLibrary();
+}
+
+/*function changeStatus(e) {
     let index = e.target.parentNode.getAttribute('data-key');
     myBooks[index].status == 'read' ? myBooks[index].status = 'not read' : myBooks[index].status = 'read';
     removeCards();
     renderLibrary();
-}
+}*/
 
 window.addEventListener('load', renderLibrary);
 newBook.addEventListener('click', openForm);
