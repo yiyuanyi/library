@@ -38,8 +38,11 @@ function Book() {
     this.status = checkStatus()
 }
 
-/*Book.prototype.changeStatus = function(i) {
-    myBooks[i].status == 'read' ? myBooks[i].status = 'not read' : myBooks[i].status = 'read';
+/*Book.prototype.changeStatus = function(e) {
+    let index = e.target.parentNode.getAttribute('data-key');
+    myBooks[index].status == 'read' ? myBooks[index].status = 'not read' : myBooks[index].status = 'read';
+    removeCards();
+    renderLibrary();
 }*/
 
 function addBookToLibrary() {
