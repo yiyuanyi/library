@@ -5,27 +5,7 @@ const status = document.querySelector('#status');
 const closeBtn = document.querySelector('#close');
 const formDetails = document.querySelector('#book-details');
 
-let myBooks = [
-    {
-        title: 'A Little Life',
-        author: 'Hanya Yanagihara',
-        year: 2015,
-        status: 'read'
-    }, 
-    {
-        title: 'Dance Dance Dance',
-        author: 'Haruki Murakami',
-        year: 1988,
-        status: 'read'
-    },
-    {
-        title: 'The Wolf of Wall Street',
-        author: 'Jordan Belfort',
-        year: 2007,
-        status: 'not read'
-    }
-
-];
+let myBooks = [];
 
 function Book() {
     this.title = title.value,
@@ -35,15 +15,13 @@ function Book() {
 }
 
 Book.prototype.changeStatus = function() {
-    this.status == 'read' ? this.status = 'not read': this.status = 'read';
-    refreshLibrary();
+    (this.status == 'read') ? (this.status = 'not read'): (this.status = 'read');
 }
 
 function addBookToLibrary() {
     let newBook = new Book();
     myBooks.push(newBook);
-    let i = myBooks.length-1;
-    renderCard(i);
+    renderLibrary();
     formDetails.reset();
     closeForm();
 }
@@ -58,6 +36,7 @@ function renderLibrary() {
         statusBtn[i].addEventListener('click', (e) => {        
             let index = e.target.parentNode.getAttribute('data-key');
             myBooks[index].changeStatus();
+            refreshLibrary();
         });
     }
     
