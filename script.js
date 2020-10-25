@@ -52,6 +52,7 @@ function renderLibrary() {
     for (i = 0; i < myBooks.length; i++) {
         renderCard(i);
     }
+
     const statusBtn = document.getElementsByClassName('status-btn');
     for (let i = 0; i < statusBtn.length; i++) {
         statusBtn[i].addEventListener('click', (e) => {        
@@ -59,6 +60,7 @@ function renderLibrary() {
             myBooks[index].changeStatus();
         });
     }
+    
     const removeBtn = document.getElementsByClassName('remove-btn');
     for (let j = 0; j < removeBtn.length; j++) {
         removeBtn[j].addEventListener('click', removeBook);
