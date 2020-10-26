@@ -21,7 +21,7 @@ Book.prototype.changeStatus = function() {
 function addBookToLibrary() {
     let newBook = new Book();
     myBooks.push(newBook);
-    renderLibrary();
+    refreshLibrary();
     formDetails.reset();
     closeForm();
 }
@@ -104,7 +104,6 @@ function refreshLibrary() {
     renderLibrary();
 }
 
-window.addEventListener('load', renderLibrary);
 newBook.addEventListener('click', openForm);
 addBook.addEventListener('click', addBookToLibrary);
 closeBtn.addEventListener('click', closeForm);
