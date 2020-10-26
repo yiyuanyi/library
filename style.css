@@ -1,38 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: #202020;
+    margin: 0;
+    padding: 0;
+    background-color: #fff6df;
     font-family: helvetica, 'sans serif';
 }
 
+.page-title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    background-color: #441111;
+    margin-bottom: 20px;
+}
+
 #page-title {
-    text-align: center;
     color: #FFF;
+    font-family: 'Abril Fatface';
+    font-size: 60px;
+    font-weight: normal;
+    text-decoration: underline;
 }
 
 #new-book {
     position: fixed;
-    left: 30px;
+    left: 50px;
     width: 100px;
     height: 40px;
-    background-color: #a2c7ff;
-    border: solid 3px #0457d3;
-    border-radius: 5px;
+    background-color: #8396ec;
+    border: solid 0.5px #000;
+    font-size: 0.9rem;
 }
 
 #book-details {
     position: fixed;
+    border-radius: 3px;
     z-index: 1;
-    left: 30px;
+    left: 50px;
     width: 200px;
-    height: 200px;
+    height: 170px;
     background-color: #FFF;
 }
 
 .hidden {
     display: none;
+}
+
+.book-item {
+    margin: 4px;
+    padding: 5px;
 }
 
 #library {
@@ -48,7 +70,8 @@ body {
     height: 230px;
     margin: 30px;
     background-color: #ffc760;
-    box-shadow: 10px 15px #357796;
+    box-shadow: 5px 5px #357796;
+    border-radius: 3px;
 }
 
 h2 {
@@ -69,21 +92,22 @@ p {
 }
 
 .read {
-    background-color: #137931;
+    background-color: #66c282;
     border: solid 2px #0a3f1a;
 }
 
 .not-read {
-    background-color: #b30808;
+    background-color: #e25a5a;
     border: solid 2px #580505;
 }
 
 .status-btn {
     position: absolute;
     z-index: 0;
-    left: 70px;
+    left: 50px;
     bottom: 30px;
-    width: 60px;
-    height: 35px;
+    width: 100px;
+    height: 40px;
     border-radius: 4px;
+    font-size: 1rem;
 }
