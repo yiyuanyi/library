@@ -104,13 +104,6 @@ function refreshLibrary() {
     renderLibrary();
 }
 
-/*function changeStatus(e) {
-    let index = e.target.parentNode.getAttribute('data-key');
-    myBooks[index].status == 'read' ? myBooks[index].status = 'not read' : myBooks[index].status = 'read';
-    removeCards();
-    renderLibrary();
-}*/
-
 window.addEventListener('load', renderLibrary);
 newBook.addEventListener('click', openForm);
 addBook.addEventListener('click', addBookToLibrary);
